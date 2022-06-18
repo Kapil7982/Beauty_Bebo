@@ -35,7 +35,7 @@
 }
 .categories:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    
+
 }
 .Makeup{
     display: flex;
@@ -138,8 +138,6 @@ div .fake-radio .radio-btn:nth-child(3) {
 animation: bullet 12300ms infinite 7200ms;	
 } 
 /* Calculate AUTOPLAY for BULLETS - END
-
-
 /* Calculate AUTOPLAY for SLIDES */
 @keyframes slide {
 0%, 25.203252032520325%	{ margin-left: 0; }
@@ -415,3 +413,4 @@ font-family: Roboto;
 display: flex;
 gap: 10px;
 }
+

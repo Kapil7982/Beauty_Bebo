@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
    <link rel="stylesheet" href="index.css">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/BeboBeauty/homepage/beautypage/index.css">
+   <link rel="stylesheet" href="/BeboBeauty/homepage/beutybebo/index.css">
 </head>
 <body>
     <div id="navbar">
@@ -13,78 +16,39 @@
     </div>
     <div id="main">
         <div id="sidebar">
-            <p>SHOP BY⬇️</p>
-            <hr>
-            <select name="" id="">
-                <option value="">SKIN TYPE</option>
-                <option value="">Combination</option>
-                <option value="">Dry</option>
-                <option value="">Normal</option>
-                <option value="">Qily</option>
-                <option value="">Sensitive</option>
-                <option value="">All skin type</option>
-            </select><br>
-            <select name="" id="">
-                <option value="">PRICE</option>
-                <option value="">Below RS:1000.00</option>
-                <option value="">RS:1000.00 and above</option>
-            </select><br>
-            <select name="" id="">
-                <option value="">BRAND</option>
-                <option value="">Garnier</option>
-                <option value="">L'Oreal Paries</option>
-                <option value="">Maybelline</option>
-                <option value="">Olay</option>
-                <option value="">Pond's</option>
-                <option value="">Faces Canada</option>
-                <option value="">NYX</option>
-                <option value="">O3+</option>
-                <option value="">Swiss Beauty</option>
-                <option value="">Colorbar</option>
-            </select><br>
-            <select name="" id="">
-                <option value="">SHADES</option>
-            </select><br>
-            <select name="" id="">
-                <option value="">FORMULATION</option>
-                <option value="">Balm</option>
-                <option value="">Cleansing</option>
-                <option value="">Liquid</option>
-                <option value="">Lotion/body butter</option>
-                <option value=""></option>
-            </select>
-           <div id="sidebarlogo">
-            <img src="https://www.beautybebo.com/pub/media/free-delivery.jpg" alt="Free Delivery Logo">
-           </div>
-
+           
         </div>
         <div id="product_bar">
           
             <div id="product_nav">
-                <p>BB CREAM</p>
-            <select id="shortList" onChange="handleNameSort()">
-                <option value="defualt">Sort:  Position</option>
-                <option value="asc">Product Name</option>
-                <option value="">New Arrivals</option>
-                <option value="LTH">Price: Low To High</option>
-                <option value="HTL">Price: High To Low</option>
-            </select>
+               
             </div>
             <div id="item">
-                <!-- <div> 
-                    <img id="image" src="https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/4/54_2.jpg" alt="">
-                    <p id="title">Faces Canada Peaches N Cream Tinted Moisturizer - Light 01</p>
-                    <div>
-                        <strike>₹495.00</strike>
-                        <p id="price">₹500.00</p>
-                        <p id="discount">10% off</p>
-                    </div>
-                    <button class="product">Add to Cart</button>
-                </div> -->
+               
             </div>
 
         </div>
     </div>
+    <div id="homefooter"></div>
 </body>
 </html>
+<script type="module">
+    import {sidebar} from "./components/sidebar.js";
+    document.getElementById("sidebar").innerHTML=sidebar();
+
+    import {prodNav} from "./components/prodNav.js";
+    document.getElementById("product_nav").innerHTML=prodNav();
+</script>
 <script src="index.js"></script>
+<script type="module">
+    import footer from "/BeboBeauty/homepage/beutybebo/compo/footer.js";
+    
+      document.getElementById("homefooter").innerHTML=footer();
+    </script>
+    <script type="module">
+        import navbar from "/BeboBeauty/homepage/beutybebo/compo/navbar.js";
+    
+        document.getElementById("navbar").innerHTML=navbar();
+    
+        //===============================================================================
+        </script>

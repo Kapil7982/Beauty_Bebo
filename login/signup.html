@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css" />
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/BeboBeauty/homepage/beautypage/index.css">
+   <link rel="stylesheet" href="/BeboBeauty/homepage/beutybebo/index.css">
+  </head>
+  <body>
+    <div id="navbar">
+        
+          <div>
+            <a href="/BeboBeauty/homepage/beautypage/index.html"><h3>Home</h3></a>
+          </div>
+        
+    </div>
+    <p id="p">CREATE NEW CUSTOMER ACCOUNT</p>
+
+    <div id="box">
+
+        <div id="box1">
+            <a href="https://www.facebook.com/login">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png" alt=""> 
+            <button>Sign in with Facebook</button>
+            </a>
+        </div>
+        
+
+      <div id="box2">
+        <a href="https://accounts.google.com/">
+            <img id="google" src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="">
+            <button>Sign in with Google</button>
+        </a>
+      </div>
+
+
+    </div>
+
+    <p>--OR--</p>
+    <form id="form">
+      <div id="contain">
+        <h3>PERSONAL INFORMATION</h3>
+        <div id="ins"></div>
+        <div>
+          <p id="p1">First Name <span>*</span></p>
+          <input id="input1" type="text" />
+        </div>
+        <div>
+          <p id="p2">Last Name <span>*</span></p>
+          <input id="input2" type="text" />
+        </div>
+        <div>
+          <input type="checkbox" id="coding" unchecked />
+          <label for="coding" id="lab">SignUp for Newsletter</label>
+        </div>
+        <div>
+          <p id="p3">Email <span>*</span></p>
+          <input id="input3" type="text" />
+        </div>
+        <div>
+          <p id="p3">Phone <span>*</span></p>
+          <input id="input4" type="text" />
+        </div>
+        <div>
+          <p id="p4">Password <span>*</span></p>
+          <input id="input5" type="text" />
+        </div>
+        <h3 id="h3">Passowrd Strength:No Password</h3>
+        <div>
+          <p id="p5">Confirm Password <span>*</span></p>
+          <input id="input6" type="text" />
+        </div>
+        <button id="submit">CREATE NEW ACCOUNT</button>
+      </div>
+    </form>
+
+    <div id="homefooter"></div>
+  </body>
+</html>
+<script>
+  var userdata = JSON.parse(localStorage.getItem("user")) || [];
+
+  document.querySelector("#form").addEventListener("submit", submitfun);
+
+  function submitfun() {
+    event.preventDefault();
+
+    var data = {
+      full_name: document.querySelector("#input1").value,
+      last_name: document.querySelector("#input2").value,
+      Email: document.querySelector("#input3").value,
+      phone: document.querySelector("#input4").value,
+      password: document.querySelector("#input5").value,
+      Confirm_password: document.querySelector("#input6").value,
+    };
+
+    console.log(data);
+
+    localStorage.setItem("user", JSON.stringify(data));
+
+
+
+    window.location.href = "./login.html";
+  }
+</script>
+
+<!-- <script type="module">
+
+    import footer from "/BeboBeauty/homepage/beutybebo/compo/footer.js";
+    document.getElementById("homefooter").innerHTML=footer();
+
+    import navbar from "/BeboBeauty/homepage/beutybebo/compo/navbar.js";
+    document.getElementById("navbar").innerHTML=navbar();
+</script> -->

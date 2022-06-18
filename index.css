@@ -1,13 +1,7 @@
 body{
     background-color: hwb(0 96% 2% / 0.822)
 }
-#navbar{
-    height:50px;
-    width:100%;
-    border:1px solid red;
-    background-color: #fff;
 
-}
 #main{
     /* background-color: #fff; */
     height:auto;
@@ -133,4 +127,7 @@ div>img{
     border: 0px;
     border-radius: 8px;
     
+}
+#item>div>button:hover{
+    background-color: #E74EAA;
 }
