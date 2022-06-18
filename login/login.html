@@ -1,0 +1,110 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LogIn</title>
+        <link rel="stylesheet" href="login.css">
+    </head>
+    <body>
+        <p id="p">CUSTOMER LOGIN</p>
+        <div id="box">
+        
+            <div id="box1">
+                <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png" alt=""> 
+                <button>Sign in with Facebook</button>
+            </div>
+        <div id="box2">
+            <img id="google" src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="">
+            <button>Sign in with Google</button>
+        </div>
+        
+        
+        </div>
+        <p>--OR--</p>
+        <form id="form">
+        <div id="cont">
+            <div id="cont1">
+                <h3 id="p3">REGISTERED CUSTOMERS</h3>
+                <div id="ins1"></div>
+                <br>
+                <br>
+                <h3 id="p4">If you have an account, sign in with your email address</h3>
+                <div>
+                    <p id="p5">Email <span>*</span></p>
+                    <input id="input3" type="text">
+                </div>
+                <div>
+                    <p id="p6">Password  <span>*</span></p>
+                    <input id="input5" type="text">
+                </div>
+                <button id="btn"  onsubmit="login()">SIGN IN</button>
+                <h5>forgot your password?</h5>
+            </div>
+            <div id="cont2">
+                <h3 id="p3">NEW CUSTOMERS</h3>
+                <div id="ins1"></div>
+                <br>
+                <br>
+                <h3 id="p4">Creating an account has many benefit: check out faster, keep more than one address, <br>track order or more.</h3>
+                <button id="submit"><a id="a1" href="./signup.html">CREATE NEW ACCOUNT</a></button>
+            </div>
+        
+        </div>
+    </form>
+    </body>
+    </html>
+    <script>
+
+
+
+
+    var user_data = JSON.parse(localStorage.getItem("user_data")) || [];
+
+    document.querySelector("#form").addEventListener("submit", submitfun);
+
+    function submitfun() {
+        event.preventDefault();
+
+        var userdata = {
+        
+        Email: document.querySelector("#input3").value,
+        
+        password: document.querySelector("#input5").value,
+        
+        };
+
+        console.log(userdata);
+
+        localStorage.setItem("user_data", JSON.stringify(userdata));
+
+        window.location.href = "#";
+
+    }
+            
+    //    let click = document.querySelector("#btn").addEventListener("click",login)
+
+    //   }
+    
+    // function login(){
+    //  event.preventDefault()
+    //  // console.log("someone clicked me");
+
+
+    //  if(){
+    
+    //      alert("Login Successfull")
+    //  }
+    //  else if(email == password)
+    //  {
+    //      alert('please provide right credential')
+        
+    //  }
+    
+    // }
+
+    
+
+  
+</script>
