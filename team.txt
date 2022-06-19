@@ -6,3 +6,26 @@ Team Members
 4.Kapil
 5.Sumit Jayswal
 6.Kunal Chitatwar
+
+
+-- What is site about:-
+It is a beauty products site which provides the wide verity of beauty products as well as some hebal products.
+
+-- Structure used for buliding this website:-
+
+1. HTML
+2. CSS
+3. JavaScript
+
+-- Flow of our wevsite:-
+
+1. Home page
+2. Sign up & login page (My accoutn section)
+3. Product pages
+4. Cart section 
+5. Payment & checkout section
+
+-- We are open for your valueable feedback in case you have --
+
+Netlify link :- https://playful-biscochitos-3f878c.netlify.app/
+
