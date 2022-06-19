@@ -1,0 +1,133 @@
+body{
+    background-color: hwb(0 96% 2% / 0.822)
+}
+
+#main{
+    /* background-color: #fff; */
+    height:auto;
+    width:85%;
+    padding: 5px 3px 8px;
+    margin: auto;
+    margin-top:20px;
+    /* border:1px solid gray; */
+    display:flex;
+    justify-content: space-between;
+    
+}
+#sidebar{
+    height:100%;
+    width:23%;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+   /* border: 1px solid; */
+}
+#sidebar>p{
+    /* border: 1px solid; */
+    margin-left: 10px;
+}
+
+#sidebar>select{
+    
+    width: 90%;
+    padding: 10px 10px;
+    margin: auto;
+    margin-left: 10px;
+    font-size: 80%;
+    font: 14px Roboto;
+    color: #666;
+    height: 1%;
+    border: 0px;
+    border-bottom: 2px solid rgb(239, 216, 216);
+}
+#sidebarlogo>img{
+margin-top: 28px;
+height: 100%;
+}
+
+#product_bar{
+height:100%;
+width:75%;
+background-color: #fff;
+box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+#product_nav{
+    height:auto;
+    width:95%;
+    margin: auto;
+    margin-bottom: 10px;
+    border-bottom: 0.8px solid rgb(222, 220, 220);
+}
+#product_nav+p{
+    color: #444444;
+    font: 18px Roboto;
+}
+#product_nav>select{
+    height: 38px;
+    border: 0px;
+    font: 16px Roboto;
+    background-color: #F5F5F5;
+    margin:  0px 10px 10px 0px;
+    padding: 0px 10px;
+}
+#item{
+    margin: auto;
+    width: 95%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows: repeat(6,auto);
+    gap:10px;
+    /* border: 0.8px solid rgb(222, 220, 220); */
+}
+#item>div{
+    /* border:1px solid red; */
+    
+    text-align: center;
+    /* border:  0.8px solid rgb(222, 220, 220); */
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+#item>div>button{
+    margin-bottom: 10px;
+}
+#item>div>img+p{
+    color: #666666;
+    font: 16px Roboto;
+    width: 90%;
+    margin: auto;
+}
+#item>div>img+p+div{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid; */
+    width: 60%;
+    margin: auto;
+}
+strike+p{
+    color: #DD0285;
+    font: 16px Roboto;
+    font-weight: bold;
+}
+strike{
+    margin-top: 16px;
+    font: 14.2px Roboto;
+    color: #999999;
+}
+p+p{
+    color: #008000;
+    font-weight: bold;
+}
+div>img{
+    height:260px;
+    width:100%;
+}
+#item>div>button{
+    padding: 10px 15px 10px 20px;
+    background-color: #DD0285;
+    color: #FFFFFF;
+    font: 14px Roboto;
+    border: 0px;
+    border-radius: 8px;
+    
+}
+#item>div>button:hover{
+    background-color: #E74EAA;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="index.css">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./homepage/beutybebo/index.css">
+</head>
+<body>
+    <div id="navbar">
+
+    </div>
+    <div id="main">
+        <div id="sidebar">
+           
+
+        </div>
+        <div id="product_bar">
+          
+            <div id="product_nav">
+               
+            </div>
+            <div id="item">
+               
+            </div>
+
+        </div>
+    </div>
+
+    <div id="homefooter"></div>
+</body>
+</html>
+<script type="module">
+    import {sidebar,prodNav,footer,navbar} from "./components/import.js";
+    document.getElementById("sidebar").innerHTML=sidebar();
+    document.getElementById("product_nav").innerHTML=prodNav();
+    document.getElementById("homefooter").innerHTML=footer();
+    document.getElementById("navbar").innerHTML=navbar();
+
+
+</script>
+<script>
+    let Products=[
+    {img:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787429695_2.jpg",
+    Rating:"Math.random()",
+    name:"Schwarzkopf Professional Bonacure Keratin Smooth Perfect Masque",
+    Allprice:"₹1,000.00",
+    Price:"930.00",
+    offpercent:"7% off"},
+    {img:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/2/v22.jpg",
+    Rating:"Math.random()",
+    name:"Vega Pro-Touch 1800-2000 VHDP-02 Hair Dryer",
+    Allprice:"₹2,750.00",
+    Price:"2,613,00",
+    offpercent:"5% off"},
+    {img:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/r/e/rejuvenating_ubtan_herb_enriched_hair_repair_mask.jpg",
+    Rating:"Math.random()",
+    name:"Rejuvenating UBTAN Herb Enriched Hair Repair Mask",
+    Allprice:"₹375.00",
+    Price:"338.00",
+    offpercent:"10% off"},
+    {img:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/s/e/sebastian_professional_trilliant_protection_for_thermal_protection_and_shimmer_-complex.jpg",
+    Rating:"Math.random()",
+    name:"Sebastian Professional Trilliant Protection For Thermal Protection And",
+    Allprice:"₹1,800.00",
+    Price:"1,710.00",
+    offpercent:"5% off"},
+    {img:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/s/e/sebastian_professional_volupt_spray_for_extra_body_and_volume.jpg",
+    Rating:"Math.random()",
+    name:"Sebastian Professional Volupt Spray For Extra Body And Volume",
+    Allprice:"₹1,950.00",
+    Price:"1,853.00",
+    offpercent:"5% off"},
+    {img:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/s/e/sebastian_professional_shaper_zero_gravity_hairspray_for_effortless_control.jpg",
+    Rating:"Math.random()",
+    name:"Sebastian Professional Shaper Zero Gravity Hairspray For Effortless Control",
+    Allprice:"₹550.00",
+    Price:"522.00",
+    offpercent:"5% off"},
+    {img:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/s/t/stronger_hold.jpg",
+    Rating:"Math.random()",
+    name:"Sebastian Professional Gel Forte Strong For Stronger Hold",
+    Allprice:"₹1,700.00",
+    Price:"1,615.00",
+    offpercent:"5% off"},
+    {img:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/t/e/texturising_paste_1.jpg",
+    Rating:"Math.random()",
+    name:"Sebastian Professional Matte Putty Texturising Paste",
+    Allprice:"₹1,950.00",
+    Price:"1,853.00",
+    offpercent:"5% off"},
+    {img:"https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/s/h/shine_wax.jpg",
+    Rating:"Math.random()",
+    name:"Sebastian Professional Shine Crafter Mouldable Shine Wax",
+    Allprice:"₹1,600.00",
+    Price:"1,520.00",
+    offpercent:"5% off"},
+]
+
+
+let Data=JSON.parse(localStorage.getItem("Data"))||[];
+let item=document.getElementById("item")
+// apendData(array)
+let apendData=(data)=>{
+    item.innerHTML=null
+    data.forEach(element => {
+      let  div1=document.createElement("div")
+
+      let image=document.createElement("img")
+      image.src=element.img;
+
+      let title=document.createElement("p")
+      title.innerText=element.name;
+
+      let div2=document.createElement("div")
+
+      let str=document.createElement("strike")
+      str.innerHTML=element.Allprice;
+
+      let price=document.createElement("p")
+      price.innerText="₹"+element.Price;
+      
+      let dis=document.createElement("p")
+      dis.innerHTML=element. offpercent;
+      
+      let button=document.createElement("button")
+      button.innerHTML="Add to Cart";
+      button.addEventListener("click",function(){
+        addTocart(element)
+      })
+      div2.append(str,price,dis)
+      div1.append(image,title,div2,button)
+      item.append(div1)
+
+    });
+}
+
+apendData(Products)
+
+function handleNameSort(){
+    let selected=document.getElementById("shortList").value;
+    console.log(selected)
+    if(selected=="defualt"){
+        apendData(Products)
+        console.log(Products)
+    }
+    if(selected=="HTL"){
+        Products.sort(function(a,b){
+            return b.Price  -  a.Price;
+        });
+        apendData(Products)
+        console.log(Products)
+    }
+    if(selected=="LTH"){
+        Products.sort(function(a,b){
+            return a.Price - b.Price;
+        });
+        apendData(Products)
+        console.log(Products)
+    }
+    if(selected=="asc"){
+        Products.sort(function (a,b){
+            let x=a.title.join().toUpperCase();
+            let y=b.title.join().toUpperCase();
+            if(x>y){
+                return 1;
+            }
+            if(x<y){
+                return -1;
+            }
+            return 0;
+        })
+        apendData(Products)
+        console.log(Products)
+    }
+}
+
+
+function addTocart(element){
+    Data.push(element)
+    localStorage.setItem("Data",JSON.stringify(Data))
+
+}
+
+</script>
+
+<!-- <script src="hair.js"></script> -->
