@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <style>
+            #cont{
+                width: 100%; height: 80px;margin: auto; border-radius: 5px;
+                display: flex;justify-content: space-evenly;  background-color: #DD0285;
+            }
+            #movie{
+                 width: 60%;  height: 80px;  font-family: sans-serif; color: white;
+               
+            }
+            #others{
+                width: 30%; height: 80px;  display: flex; justify-content: space-between;
+                font-family: sans-serif;
+            }
+            a{
+                text-decoration: none; color: white;
+            }
+             #login-form-div{
+                width: 30%; height: 400px; margin: auto; padding-left: 15px; border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            }
+            form>input{
+                width: 92%; height: 50px; padding-left: 10px; margin-bottom: 30px;
+            }
+            h1{
+                text-align: center; padding-top: 20px; margin-bottom: 60px;
+            }
+            #butn{
+                margin-left: 130px; width: 40%; height: 50px; border-radius: 5px; background-color: #DD0285; border: 0px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="cont">
+           
+            <div id="movie">
+               
+            </div>
+            <div id="others">
+               <h2> <a href="../index.html">Home</a> </h2>
+               <h2> <a href="./signup.html">Signup</a> </h2>
+               <h2> <a href="./login.html">Login</a> </h2>
+               
+            </div>
+        </div>
+        <div id="login-form-div">
+                <h1>Login</h1>
+            <form id="form">
+                <!--Write form input elements here-->
+                <input type="email" id="email" placeholder="Enter your Email">
+                <input type="password" id="password" placeholder="Enter your Password">
+                <button id="butn">Submit</button>
+            </form>
+
+        </div>
+    </body>
+
+</html>
+
+
+<script>
+   var form = document.querySelector("form");
+    var userData = JSON.parse(localStorage.getItem("userData"))
+
+    form.addEventListener("submit",function(event){
+      event.preventDefault();
+        var data={
+            email:form.email.value,
+            password:form.password.value,
+
+        }
+
+        let email = document.getElementById("email").value;
+       let password = document.getElementById("password").value;
+
+       
+     
+        if(email.length!==0 && password.length!==0)
+        {
+            alert("Sign in Successfully");
+           localStorage.setItem("signin",JSON.stringify(userData));
+           window.location.href = "../index.html"    
+        }
+       if(email.length===0 && password.length===0)
+        {
+            alert("Please enter the details")
+        }
+        else if(email.length===0)
+       {
+           alert("Please enter the email");
+       }
+       else if(password.length===0)
+       {
+           alert("Plese enter the password");
+       }
+       
+     
+
+    })
+
+</script>
